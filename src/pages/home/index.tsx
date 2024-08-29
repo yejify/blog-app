@@ -1,15 +1,11 @@
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function Home() {
   return (
     <div>
-      <header>
-        <div>
-          <Link to='/posts/new'>글쓰기</Link>
-          <Link to='/posts'>게시글</Link>
-          <Link to='/profile'>프로필</Link>
-        </div>
-      </header>
+      <Header />
       <div className='post__navigation'>
         <div className='post__navigation--active'>전체</div>
         <div>나의 글</div>
@@ -19,7 +15,7 @@ export default function Home() {
           <div key={i} className='post__box'>
             <Link to={`/posts/${i}`}>
               <div className='post__profile-box'>
-                <div className='post__pofile' />
+                <div className='post__profile' />
                 <div className='post__author-name'>jiji</div>
                 <div className='post__date'>2024.08.28 수요일</div>
               </div>
@@ -44,11 +40,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <footer>
-        <Link to='/posts/new'>글쓰기</Link>
-        <Link to='/posts'>게시글</Link>
-        <Link to='/profile'>프로필</Link>
-      </footer>
+      <Footer />
     </div>
   );
 }
