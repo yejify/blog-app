@@ -4,7 +4,6 @@ import PostList from '../pages/posts';
 import PostDetail from '../pages/posts/detail';
 import PostEdit from '../pages/posts/edit';
 import PostNew from '../pages/posts/new';
-import './App.css';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import LoginPage from '../pages/login';
 import SignupPage from '../pages/signup';
