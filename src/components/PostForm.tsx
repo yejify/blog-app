@@ -53,7 +53,7 @@ export default function PostForm() {
   };
 
   return (
-    <form action='/post' method='POST' className='form'>
+    <form onSubmit={onSubmit} className='form'>
       <div className='form__block'>
         <label htmlFor='title'>제목</label>
         <input
