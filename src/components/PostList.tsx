@@ -6,6 +6,7 @@ import {
   getDocs,
   orderBy,
   query,
+  where,
 } from 'firebase/firestore';
 import { db } from 'firebaseApp';
 import { useContext, useEffect, useState } from 'react';
@@ -14,6 +15,7 @@ import { toast } from 'react-toastify';
 
 interface PostListProps {
   hasNavigation?: boolean;
+  defaultTab?: TabType | CategoryType;
 }
 
 type TabType = 'all' | 'my';
@@ -27,17 +29,49 @@ export interface PostProps {
   createdAt: string;
   updatedAt?: string;
   uid: string;
+  category?: CategoryType;
 }
 
-export default function PostList({ hasNavigation = true }: PostListProps) {
-  const [activeTab, setActiveTab] = useState<TabType>('all');
+export type CategoryType = 'Frontend' | 'Backend' | 'Web' | 'Native';
+export const CATEGORIES: CategoryType[] = [
+  'Frontend',
+  'Backend',
+  'Web',
+  'Native',
+];
+
+export default function PostList({
+  hasNavigation = true,
+  defaultTab = 'all',
+}: PostListProps) {
+  const [activeTab, setActiveTab] = useState<TabType | CategoryType>(
+    defaultTab
+  );
   const [post, setPost] = useState<PostProps[]>([]);
   const { user } = useContext(AuthContext);
 
   const getPosts = async () => {
     setPost([]);
     let postsRef = collection(db, 'posts');
-    let postsQuery = query(postsRef, orderBy('createdAt', 'asc'));
+    let postsQuery;
+
+    if (activeTab === 'my' && user) {
+      postsQuery = query(
+        postsRef,
+        where('uid', '==', user.uid),
+        orderBy('createdAt', 'asc')
+      );
+    } else if (activeTab === 'all') {
+      // 모든 글 보여주기
+      postsQuery = query(postsRef, orderBy('createdAt', 'asc'));
+    } else {
+      // 카테고리 글 보여주기
+      postsQuery = query(
+        postsRef,
+        where('category', '==', activeTab),
+        orderBy('createdAt', 'asc')
+      );
+    }
 
     const datas = await getDocs(postsQuery);
     datas?.forEach((doc) => {
@@ -58,7 +92,7 @@ export default function PostList({ hasNavigation = true }: PostListProps) {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [activeTab]);
 
   return (
     <>
@@ -78,6 +112,18 @@ export default function PostList({ hasNavigation = true }: PostListProps) {
           >
             나의 글
           </div>
+          {CATEGORIES?.map((category) => (
+            <div
+              key={category}
+              role='presentation'
+              onClick={() => setActiveTab(category)}
+              className={
+                activeTab === category ? 'post__navigation--active' : ''
+              }
+            >
+              {category}
+            </div>
+          ))}
         </div>
       )}
       <div className='post__list'>
