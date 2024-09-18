@@ -11,7 +11,7 @@ interface ThemeProps {
 
 export const ThemeContextProvider = ({ children }: ThemeProps) => {
   const [theme, setTheme] = useState('light');
-  window.localStorage.getItem('theme') || 'light';
+  window.localStorage.getItem('theme' || 'light');
 
   const toggleMode = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
