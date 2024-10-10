@@ -1,4 +1,4 @@
-# React Blog
+# Blog-App
 
 ![React Blog 목업](https://github.com/user-attachments/assets/2598e42b-6311-4909-a760-5f1657442c69)
 
