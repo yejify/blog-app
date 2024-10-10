@@ -1,5 +1,7 @@
 # React Blog
 
+![React Blog 목업](https://github.com/user-attachments/assets/2598e42b-6311-4909-a760-5f1657442c69)
+
 ## 프로젝트 개요
 React와 Firebase를 활용한 블로그 웹 애플리케이션으로, 사용자가 글을 작성, 수정, 삭제(CRUD)할 수 있고, Firebase Auth를 통해 사용자 인증 및 권한 관리를 지원합니다. BEM 방법론으로 스타일링을 적용했으며, 다크모드와 같은 상태 관리를 Context API로 구현했습니다.
 
