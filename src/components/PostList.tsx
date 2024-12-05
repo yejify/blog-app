@@ -39,7 +39,7 @@ export interface PostProps {
 }
 type TabType = 'all' | 'my';
 
-export type CategoryType = 'Frontend' | 'Backend' | 'Web' | 'Native';
+export type CategoryType = 'JavaScript' | 'React' | 'TypeScript' | 'Next.js';
 
 export const CATEGORIES: CategoryType[] = [
   'Frontend',
