@@ -39,13 +39,13 @@ export interface PostProps {
 }
 type TabType = 'all' | 'my';
 
-export type CategoryType = 'JavaScript' | 'React' | 'TypeScript' | 'Next.js';
+export type CategoryType = 'JavaScript' | 'React' | 'TypeScript' | 'NextJs';
 
 export const CATEGORIES: CategoryType[] = [
-  'Frontend',
-  'Backend',
-  'Web',
-  'Native',
+  'JavaScript',
+  'React',
+  'TypeScript',
+  'NextJs',
 ];
 
 export default function PostList({
