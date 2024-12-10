@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # 환경변수
     env:
       REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
       REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
@@ -29,6 +30,10 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      # Firebase CLI 설치
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting
