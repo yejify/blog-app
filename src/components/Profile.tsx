@@ -2,7 +2,6 @@ import AuthContext from 'context/AuthContext';
 import { getAuth, signOut } from 'firebase/auth';
 import { app } from 'firebaseApp';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function Profile() {

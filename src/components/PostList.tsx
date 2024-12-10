@@ -100,7 +100,7 @@ export default function PostList({
 
   useEffect(() => {
     getPosts();
-  }, [activeTab]);
+  }, [activeTab, getPosts]);
 
   return (
     <>
