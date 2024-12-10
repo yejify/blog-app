@@ -9,7 +9,7 @@ import {
   where,
 } from 'firebase/firestore';
 import { db } from 'firebaseApp';
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -58,9 +58,9 @@ export default function PostList({
   const [post, setPost] = useState<PostProps[]>([]);
   const { user } = useContext(AuthContext);
 
-  const getPosts = async () => {
+  const getPosts = useCallback(async () => {
     setPost([]);
-    let postsRef = collection(db, 'posts');
+    const postsRef = collection(db, 'posts');
     let postsQuery;
 
     if (activeTab === 'my' && user) {
@@ -86,7 +86,7 @@ export default function PostList({
       const dataObj = { ...doc.data(), id: doc.id };
       setPost((prev) => [...prev, dataObj as PostProps]);
     });
-  };
+  }, [activeTab, user]);
 
   const handleDelete = async (id: string) => {
     const confirm = window.confirm('해당 게시글을 삭제하시겠습니까?');
