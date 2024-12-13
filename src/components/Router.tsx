@@ -28,6 +28,7 @@ export default function Router({ isAuthenticated }: RouterProps) {
           </>
         ) : (
           <>
+            <Route path='/' element={<Home />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/signup' element={<SignupPage />} />
             <Route path='*' element={<LoginPage />} />
