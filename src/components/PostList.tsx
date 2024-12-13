@@ -99,8 +99,11 @@ export default function PostList({
   };
 
   useEffect(() => {
+    if (!user && activeTab === 'my') {
+      setActiveTab('all');
+    }
     getPosts();
-  }, [activeTab, getPosts]);
+  }, [activeTab, getPosts, user]);
 
   return (
     <>
@@ -113,13 +116,15 @@ export default function PostList({
           >
             전체
           </div>
-          <div
-            role='presentation'
-            onClick={() => setActiveTab('my')}
-            className={activeTab === 'my' ? 'post__navigation--active' : ''}
-          >
-            나의 글
-          </div>
+          {user && (
+            <div
+              role='presentation'
+              onClick={() => setActiveTab('my')}
+              className={activeTab === 'my' ? 'post__navigation--active' : ''}
+            >
+              나의 글
+            </div>
+          )}
           {CATEGORIES?.map((category) => (
             <div
               key={category}
