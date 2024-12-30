@@ -5,6 +5,9 @@
 ## 프로젝트 개요
 React와 Firebase를 활용한 블로그 웹 애플리케이션으로, 사용자가 글을 작성, 수정, 삭제(CRUD)할 수 있고, Firebase Auth를 통해 사용자 인증 및 권한 관리를 지원합니다. BEM 방법론으로 스타일링을 적용했으며, 다크모드와 같은 상태 관리를 Context API로 구현했습니다.
 
+## 바로가기
+[Blog-App](https://react-blog-app-af335.web.app/)
+
 ## 주요 기능
 - **CRUD 기능**: 게시글 생성, 조회, 수정, 삭제 구현
 - **사용자 인증 및 권한 관리**: Firebase Auth를 이용한 로그인 및 권한 관리
@@ -25,7 +28,7 @@ React와 Firebase를 활용한 블로그 웹 애플리케이션으로, 사용자
 - **실시간 데이터 처리**: Firestore를 이용한 실시간 데이터 생성 및 업데이트
 
 ## 배포
-Firebase CLI를 이용한 [Firebase Hosting](https://react-blog-app-af335.web.app/) 배포
+Firebase CLI를 이용한 Firebase Hosting 배포
 
 ## 커밋 규칙
 - **Feat**: 새로운 기능, 특징 추가
