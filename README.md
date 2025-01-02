@@ -9,8 +9,10 @@ React와 Firebase를 활용한 블로그 웹 애플리케이션으로, 사용자
 [Blog-App](https://react-blog-app-af335.web.app/)
 
 ## 테스트 계정
-ID : test1@test.com
-PW : password
+| ID   | PW   |
+|---------|---------|
+| test1@test.com | password |
+
 
 ## 주요 기능
 - **CRUD 기능**: 게시글 생성, 조회, 수정, 삭제 구현
