@@ -65,6 +65,7 @@ export default function LoginForm() {
           value={email}
           required
           onChange={onChange}
+          autoComplete='off'
         />
       </div>
       <div className='form__block'>
