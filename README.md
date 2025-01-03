@@ -48,6 +48,18 @@ Firebase CLI를 이용한 Firebase Hosting 배포
 - **Remove**: 파일을 삭제하는 작업
 - **Rename**: 파일 또는 폴더명 변경
 
-## 기타 학습 내용
-- 폴더 구조 설정 및 프로젝트 세팅(CRA)
-- React Router와 Firebase의 기본 개념 및 활용
+## 상세 기능
+#### 회원가입
+![blog-app_signUp](https://github.com/user-attachments/assets/810a7ba6-6cf9-4b87-9b0f-c4125348d4dc)
+
+#### 로그인
+![blog-app_logIn](https://github.com/user-attachments/assets/b2135376-f1c1-4a44-a297-5f7f0ea916d4)
+
+#### 게시글 등록
+![blog-app_creat](https://github.com/user-attachments/assets/906600fb-362e-473b-ac11-8833a8d55d50)
+
+#### 게시글 수정
+![blog-app_update](https://github.com/user-attachments/assets/92c5cfa9-841d-4ae1-b1ce-394f1d90e730)
+
+#### 게시글 삭제
+![blog-app_delete](https://github.com/user-attachments/assets/3b4d40ff-126a-4fee-9403-ac8ce9ec39da)
